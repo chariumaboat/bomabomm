@@ -18,5 +18,3 @@ fi
 if [ -e $statusIds ] && [ -e $userIds ]; then
   python darkMarking.py $1 $2 2>&1 | tee ./log/`date "+%Y%m%d_%H%M%S"`.log
 fi
-
-
