@@ -1,6 +1,7 @@
 #!/bin/sh
 echo "word=" $1
 echo "env=" $2
+echo "post data env=" $3
 
 mkdir -p ./log/
 
@@ -16,5 +17,5 @@ if [ ! -e $userIds ]; then
 fi
 
 if [ -e $statusIds ] && [ -e $userIds ]; then
-  python darkMarking.py $1 $2 2>&1 | tee ./log/`date "+%Y%m%d_%H%M%S"`.log
+  python darkMarking.py $1 $2 $3 2>&1 | tee ./log/`date "+%Y%m%d_%H%M%S"`.log
 fi

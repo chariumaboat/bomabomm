@@ -10,6 +10,15 @@ from datetime import datetime
 import time
 
 
+def getTwData(dataName):
+    config = configparser.ConfigParser()
+    config.read('postdata.ini')
+    postVideoUrl = config.get(dataName, 'postVideoUrl')
+    postUrl = config.get(dataName, 'postUrl')
+    text = config.get(dataName, 'text')
+    return postVideoUrl, postUrl, text
+
+
 def auth_api(envName):
     config = configparser.ConfigParser()
     config.read('setting.ini')
