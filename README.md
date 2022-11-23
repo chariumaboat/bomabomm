@@ -51,7 +51,12 @@ crontab -e
 */10 * * * * cd /home/ubuntu/boma_bomm; /home/ubuntu/boma_bomm/darkMarking.sh '"\ブラックメタル\"' demo demo > /dev/null 2>&1
 ```
 
-## FaaSへの展開(オプション)
+## おまけ
+- 特定フォロワーのフォロー・フォロワー全員に引用RTする
+  - 邪悪なので使わないように
 
-- CSVデータにて攻撃済みStatus IDとUser IDを管理しているが、これをS3/Cloud Storageやに格納することで、LambdaやCloud Runでの実行が可能
-  - ネットワークをかなり食うので、OCIなどのAlway Freeが多いサービスで実行すると、無料でスパムマーケティングが可能
+```bash
+python followreQt.py "ターゲットのscreen_name" "setting.iniの環境名" "postdata.iniの環境名"
+```
+
+- `nohup python3 followreQt.py "ターゲットのscreen_name" "setting.iniの環境名" "postdata.iniの環境名" >> log 2>&1 &`でログアウトしても安心
