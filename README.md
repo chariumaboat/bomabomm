@@ -59,4 +59,4 @@ crontab -e
 python followreQt.py "ターゲットのscreen_name" "setting.iniの環境名" "postdata.iniの環境名"
 ```
 
-- `nohup python3 followreQt.py "ターゲットのscreen_name" "setting.iniの環境名" "postdata.iniの環境名" >> log 2>&1 &`でログアウトしても安心
+- `nohup python followreQt.py "ターゲットのscreen_name" "setting.iniの環境名" "postdata.iniの環境名" >> log 2>&1 &`でログアウトしても安心
