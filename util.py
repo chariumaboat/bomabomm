@@ -92,3 +92,21 @@ def listToCsv(fileName, listName):
         writer = csv.writer(f, lineterminator='\n')
         writer.writerows(writeIds)
     pass
+
+
+def getFollow_ids(Api, Id):
+    # フォロー取得
+    followe_ids = tweepy.Cursor(Api.friends_ids, id=Id, cursor=-1).items()
+    followe_ids_list = []
+    for followers_id in followe_ids:
+        followe_ids_list.append(followers_id)
+    return followe_ids_list
+
+
+def getFollowers_ids(Api, Id):
+    # フォロワー取得
+    followers_ids = tweepy.Cursor(Api.followers_ids, id=Id, cursor=-1).items()
+    followers_ids_list = []
+    for followers_id in followers_ids:
+        followers_ids_list.append(followers_id)
+    return followers_ids_list
